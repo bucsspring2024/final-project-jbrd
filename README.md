@@ -7,7 +7,7 @@
 
 ## Team Members
 
-<< List team member names >>
+John Bopp, Richie Dentico
 
 ***
 
