@@ -13,7 +13,7 @@
 
 ## Project Description
 
-<< Give an overview of your project >>
+<< Virtual Assistant for weather, news, stocks >>
 
 ***    
 
@@ -31,9 +31,9 @@
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
+1. << Voice input >>
+2. << Using apis for weather, news, stock data >>
+3. << Displaying Feedback >>
 4. << Feature 4 >>
 5. << Feature 5 >>
 
