@@ -1,11 +1,13 @@
 import pygame
+from src.sample_controller import Controller
 #import your controller
 
 def main():
     pygame.init()
     #Create an instance on your controller object
     #Call your mainloop
-    
+    app=Controller()
+    app.mainloop()
     ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######
 
 # https://codefather.tech/blog/if-name-main-python/
