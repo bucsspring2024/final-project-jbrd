@@ -1,10 +1,11 @@
 import PySimpleGUI as sg
+import textInput
 
-sg.theme('grey')   # Add a touch of color
+sg.theme('DarkGrey5')   # Add a touch of color
 # All the stuff inside your window.
 layout = [ 
             [sg.Text('Enter Your Search'), sg.InputText()],
-            [sg.Button('Search')],
+            [sg.Button('Search'), sg.Button('Close Window')],
 ]
 
 # Create the Window
@@ -13,7 +14,7 @@ window = sg.Window('Test', layout).Finalize()
 # Event Loop to process "events" and get the "values" of the inputs
 while True:
     event, values = window.read()
-    if event in (None, 'Search'): # if user closes window or clicks cancel
+    if event in (None, 'Close Window'): # if user closes window or clicks cancel
         break
     print('You entered ', values[0])
 
