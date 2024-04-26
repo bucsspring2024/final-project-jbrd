@@ -11,6 +11,10 @@ class TextInput:
             user_inpt=text
             file.write(user_inpt+"\n")
         file.close()
+    def main():
+        input_text("hello")
     
+    main()
+       
     
        
