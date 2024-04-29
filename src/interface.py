@@ -78,8 +78,9 @@ class Controller:
                     continue
         
         information = open('duckduck_tutorial.csv')
-        for line in information:
-            print(line)
+        print(information)
+        #for line in information:
+            #print(line)
         
             
       

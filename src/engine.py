@@ -21,13 +21,10 @@ class searchEngine:
 
                 result_df = df[['title', 'href']]
                 result_df.to_csv('duckduck_tutorial.csv',index=False)
+                print(results_df)
                 
                 
-                return(results_df)
                 
                 
 
-        def toStr(results_df):
-                results=results_df
-                print (pd.DataFrame(results))
-                
+        
