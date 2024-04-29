@@ -41,10 +41,56 @@ John Bopp, Richie Dentico
 - << You should have a list of each of your classes with a description >>
 
 ## ATP
+Test 1 (Opening the Program):
+Steps:
+-User Types in python main.py in the terminal
+-Results
+-User should expect to see a text window with a search Bar
+
+Test 2 (Search Bar Use):
+Steps:
+-User types their desired search into the search bar
+-User presses search
+Results:
+-Window Closes
+-User sees a pop up window with their information
+
+Test 3 (Voice Command Correct)
+Steps:
+-User presses voice command button
+-User waits to be prompted to speak by popup window and presses ok when ready
+-User speaks into computer
+-Popup window appears asking the user with what the computer heard and the user is asked if that is correct or not
+-User selects yes and the window disapears
+Results:
+-User sees a pop up window with their information
+
+Test 4 (Voice Command Incorrect, User then uses text search)
+Steps:
+-User presses voice command button
+-User waits to be prompted to speak by popup window and presses ok when ready
+-User speaks into computer
+-Popup window appears asking the user with what the computer heard and the user is asked if that is correct or not
+-User selects no and the window disapears
+-Then the original window reopens and this time the user types in the search bar instead
+-User types their desired search into the search bar
+-User presses search, and the window Closes
+Results:
+-User sees a pop up window with their information
+
+Test 5 (Voice Command Incorrect, User then uses voice search again)
+Steps:
+-User presses voice command button
+-User waits to be prompted to speak by popup window and presses ok when ready
+-User speaks into computer
+-Popup window appears asking the user with what the computer heard and the user is asked if that is correct or not
+-User selects no and the window disapears
+-Then the original window reopens and the user repeats the previous steps for voice command.
+Results:
+-User sees a pop up window with their information
 
 
-| Step                 |Procedure             |Expected Results                   |
-|----------------------|:--------------------:|----------------------------------:|
-|  1                   | Run Counter Program  |GUI window appears with count = 0  |
-|  2                   | click count button   | display changes to count = 1      |
-etc...
+
+
+
+
