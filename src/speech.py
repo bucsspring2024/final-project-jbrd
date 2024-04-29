@@ -31,8 +31,8 @@ try:
             # adjust the energy threshold based on
             # the surrounding noise level 
         r.adjust_for_ambient_noise(source2, duration=0.2)
-             
-            #listens for the user's input 
+        print("listening")   
+        #listens for the user's input 
         audio2 = r.listen(source2)
              
             # Using google to recognize audio

@@ -1,35 +1,90 @@
 import PySimpleGUI as sg
-from textInput import TextInput 
-from engine import searchEngine
+import speech_recognition as sr
+import pyttsx3 
 
-sg.theme('DarkGrey5')   # Add a touch of color
-# All the stuff inside your window.
-layout = [ 
-            [sg.Text('Enter Your Search'), sg.InputText()],
-            [sg.Button('Search'), sg.Button('Close Window')],
-]
+from src.engine import searchEngine
+class Controller:
 
-# Create the Window
-window = sg.Window('Search', layout).Finalize()
-#window.Maximize()
+    def __init__(self):
+
+        sg.theme('DarkGrey5')   # Add a touch of color
+    # All the stuff inside your window.
+        layout = [ 
+                [sg.Text('Enter Your Search'), sg.InputText()],
+                [sg.Button('Search'),sg.Button('Voice Search'), sg.Button('Close Window') ],
+        ]
+        # Create the Window
+        self.window = sg.Window('Search', layout).Finalize()
+    def mainloop(self):
+        r = sr.Recognizer() 
+
+       
+   
 # Event Loop to process "events" and get the "values" of the inputs
-while True:
-    event, values = window.read()
-    if event in (None, 'Close Window'): # if user closes window or clicks cancel
-        break
-    print('You entered ', values[0])
-    string=values[0]
-    searchEngine.search(values[0])
+        while True:
+            event, values = self.window.read()
+            if event in (None, 'Close Window'): # if user closes window or clicks cancel
+                break
+            #If they press the search bar this then closes the window and searches
+            elif event in('Search'):
+                   
+                
+                string=values[0]
+                searchEngine.search(values[0])
 
-window.close()
-if values[0]!="":
-    window.close()
+                self.window.close()
+            #If they select the voice search option this allows them to then use their voice to search
+            elif event in ('Voice Search'):
+                
+                self.window.close()
+                
+                try:
+         
+            # use the microphone as source for input.
+                    with sr.Microphone() as source2:
+             
+            # wait for a second to let the recognizer
+            # adjust the energy threshold based on
+            # the surrounding noise level 
+                        r.adjust_for_ambient_noise(source2, duration=0.2)
+                        #Popup window which allows the user to see that the computer is now listening
+                        pop=sg.popup("listening")
+                         
+                        #listens for the user's input 
+                        audio2 = r.listen(source2)
+             
+                        # Using google to recognize audio
+                        MyText = r.recognize_google(audio2)
+                        MyText = MyText.lower()
+                        #A popup to ask the user if the computer heard them correctly
+                        select=sg.popup_yes_no("Did you say", MyText)
+                        
+                        if event in ('yes'):
+                            searchEngine.search(MyText)
+                        else:
+                            Mytext=""
+                            pass
+        
+       
+        
+        
+        
+             
+                except sr.RequestError as e:
+                    print("Could not request results; {0}".format(e))
+         
+                except sr.UnknownValueError:
+                    print("unknown error occurred")
+                
+           
+            
+      
     
 
-event, values = sg.Window('Choose an option', [[sg.Text('Select one->'), sg.Listbox(['Option a', 'Option b', 'Option c'], size=(20, 3), key='LB')],
-    [sg.Button('Ok'), sg.Button('Cancel')]]).read(close=True)
+        #event, values = sg.Window('Choose an option', [[sg.Text('Select one->'), sg.Listbox(['Option a', 'Option b', 'Option c'], size=(20, 3), key='LB')],
+            #[sg.Button('Ok'), sg.Button('Cancel')]]).read(close=True)
 
-if event == 'Ok':
-    sg.popup(f'You chose {values["LB"][0]}')
-else:
-    sg.popup_cancel('User aborted')
+        #if event == 'Ok':
+            #sg.popup(f'You chose {values["LB"][0]}')
+        #else:
+            #sg.popup_cancel('User aborted')

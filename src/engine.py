@@ -8,11 +8,12 @@ class searchEngine:
                         region='wt-wt',
                         safesearch='off',
                         timelimit='7d',
-                        max_results=1
+                        max_results=5
                         )
         
                 results_df=pd.DataFrame(results)
                 results_df.to_csv('duckduck_tutorial.csv',index=False)
 
         def toStr(results):
+                
                 pass
