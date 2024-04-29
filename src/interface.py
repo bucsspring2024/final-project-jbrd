@@ -56,15 +56,8 @@ class Controller:
                         # Using google to recognize audio
                         MyText = r.recognize_google(audio2)
                         MyText = MyText.lower()
-                        #A popup to ask the user if the computer heard them correctly
-                        select=sg.popup_yes_no("Did you say", MyText)
                         
-                        if event in ('yes'):
-                            searchEngine.search(MyText)
-                        else:
-                            Mytext=""
-                            pass
-        
+                        
        
         
         
@@ -75,6 +68,13 @@ class Controller:
          
                 except sr.UnknownValueError:
                     print("unknown error occurred")
+                #A popup to ask the user if the computer heard them correctly
+                select=sg.popup_yes_no("Did you say", MyText)
+                if select=="Yes":
+                         
+                    searchEngine.search(str(MyText))
+                else:
+                    continue
                 
            
             
