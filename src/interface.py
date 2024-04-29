@@ -9,12 +9,12 @@ class Controller:
 
         sg.theme('DarkGrey5')   # Add a touch of color
     # All the stuff inside your window.
-        layout = [ 
+        self.layout = [ 
                 [sg.Text('Enter Your Search'), sg.InputText()],
                 [sg.Button('Search'),sg.Button('Voice Search'), sg.Button('Close Window') ],
         ]
         # Create the Window
-        self.window = sg.Window('Search', layout).Finalize()
+        self.window = sg.Window('Search', self.layout).Finalize()
     def mainloop(self):
         r = sr.Recognizer() 
 
@@ -32,11 +32,11 @@ class Controller:
                 string=values[0]
                 searchEngine.search(values[0])
 
-                self.window.close()
+                self.window.Hide()
             #If they select the voice search option this allows them to then use their voice to search
             elif event in ('Voice Search'):
                 
-                self.window.close()
+                self.window.Hide()
                 
                 try:
          
@@ -66,17 +66,21 @@ class Controller:
                 except sr.RequestError as e:
                     print("Could not request results; {0}".format(e))
          
-                except sr.UnknownValueError:
-                    print("unknown error occurred")
+                except sr.UnknownValueError as e:
+                    print(e, "unknown error occurred")
                 #A popup to ask the user if the computer heard them correctly
                 select=sg.popup_yes_no("Did you say", MyText)
                 if select=="Yes":
                          
                     searchEngine.search(str(MyText))
                 else:
+                    self.window.UnHide()
                     continue
-        print(searchEngine.search(values[0]))
-           
+        
+        information = open('duckduck_tutorial.csv')
+        for line in information:
+            print(line)
+        
             
       
     

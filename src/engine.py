@@ -12,7 +12,16 @@ class searchEngine:
                         )
         
                 results_df=pd.DataFrame(results)
+                
+                
+
+                
                 results_df.to_csv('duckduck_tutorial.csv',index=False)
+                df = pd.read_csv('duckduck_tutorial.csv')
+
+                result_df = df[['title', 'href']]
+                result_df.to_csv('duckduck_tutorial.csv',index=False)
+                
                 
                 return(results_df)
                 
