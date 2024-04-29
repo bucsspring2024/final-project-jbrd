@@ -32,16 +32,16 @@ John Bopp, Richie Dentico
 ### Features
 
 1. << Voice input >>
-2. << Using apis for weather, news, stock data >>
-3. << Displaying Feedback >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+2. << Using Duck Duck Go Api to return the top five search results>>
+3. << Displaying Feedback the top five searches on a popup window >>
+
 
 ### Classes
 
 - << You should have a list of each of your classes with a description >>
 
 ## ATP
+
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|

@@ -75,7 +75,7 @@ class Controller:
                     searchEngine.search(str(MyText))
                 else:
                     continue
-                
+        print(searchEngine.search(values[0]))
            
             
       

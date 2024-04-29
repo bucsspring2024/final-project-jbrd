@@ -13,7 +13,12 @@ class searchEngine:
         
                 results_df=pd.DataFrame(results)
                 results_df.to_csv('duckduck_tutorial.csv',index=False)
-
-        def toStr(results):
                 
-                pass
+                return(results_df)
+                
+                
+
+        def toStr(results_df):
+                results=results_df
+                print (pd.DataFrame(results))
+                
