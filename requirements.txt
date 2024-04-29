@@ -1,3 +1,4 @@
 speechrecognition
 pyttsx3
 pyaudio
+install -U duckduckgo_search httpx pandas

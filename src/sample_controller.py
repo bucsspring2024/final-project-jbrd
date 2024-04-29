@@ -17,17 +17,17 @@ class Controller:
       #update data
 
       #redraw
-      
+      pass
   def gameloop(self):
       #event loop
 
       #update data
 
       #redraw
-    
+      pass
   def gameoverloop(self):
       #event loop
 
       #update data
-
+      pass
       #redraw
