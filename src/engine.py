@@ -16,12 +16,12 @@ class searchEngine:
                 
 
                 
-                results_df.to_csv('duckduck_tutorial.csv',index=False)
-                df = pd.read_csv('duckduck_tutorial.csv')
+                results_df.to_csv('file.csv',index=False)
+                df = pd.read_csv('file.csv')
 
                 result_df = df[['title', 'href']]
-                result_df.to_csv('duckduck_tutorial.csv',index=False)
-                print(results_df)
+                result_df.to_csv('file.csv',index=False)
+                
                 
                 
                 

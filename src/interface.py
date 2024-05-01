@@ -22,20 +22,26 @@ class Controller:
    
 # Event Loop to process "events" and get the "values" of the inputs
         while True:
+            
+            
+            
             event, values = self.window.read()
+            
             if event in (None, 'Close Window'): # if user closes window or clicks cancel
                 break
             #If they press the search bar this then closes the window and searches
             elif event in('Search'):
-                   
+                
                 
                 string=values[0]
                 searchEngine.search(values[0])
-
+                
                 self.window.Hide()
+                break
+                
             #If they select the voice search option this allows them to then use their voice to search
             elif event in ('Voice Search'):
-                
+                print("line 39")
                 self.window.Hide()
                 
                 try:
@@ -73,23 +79,22 @@ class Controller:
                 if select=="Yes":
                          
                     searchEngine.search(str(MyText))
+                    break
                 else:
                     self.window.UnHide()
                     continue
         
-        information = open('duckduck_tutorial.csv')
-        print(information)
-        #for line in information:
-            #print(line)
         
-            
+        information = open('file.csv')
+        
+        #for line in information[1:]:
+            #print(line)
+
+        sg.popup(information.read())
+        
+
+        
       
     
 
-        #event, values = sg.Window('Choose an option', [[sg.Text('Select one->'), sg.Listbox(['Option a', 'Option b', 'Option c'], size=(20, 3), key='LB')],
-            #[sg.Button('Ok'), sg.Button('Cancel')]]).read(close=True)
-
-        #if event == 'Ok':
-            #sg.popup(f'You chose {values["LB"][0]}')
-        #else:
-            #sg.popup_cancel('User aborted')
+       

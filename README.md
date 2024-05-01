@@ -13,7 +13,7 @@ John Bopp, Richie Dentico
 
 ## Project Description
 
-<< Virtual Assistant for weather, news, stocks >>
+<< Search Engine That Uses Voice Recognition >>
 
 ***    
 
@@ -21,11 +21,11 @@ John Bopp, Richie Dentico
 
 ### Initial Design
 
-![initial gui](assets/gui.jpg)
+![initial gui](assets/firstgui.png)
 
 ### Final Design
 
-![final gui](assets/finalgui.jpg)
+![final gui](assets/finalgui.png)
 
 ## Program Design
 
