@@ -16,8 +16,7 @@ def SpeakText(command):
     engine.runAndWait()
      
      
-# Loop infinitely for user to
-# speak
+
 
      
     # Exception handling to handle

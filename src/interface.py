@@ -7,8 +7,8 @@ class Controller:
 
     def __init__(self):
 
-        sg.theme('DarkGrey5')   # Add a touch of color
-    # All the stuff inside your window.
+        sg.theme('DarkGrey5')   
+    
         self.layout = [ 
                 [sg.Text('Enter Your Search'), sg.InputText()],
                 [sg.Button('Search'),sg.Button('Voice Search'), sg.Button('Close Window') ],
@@ -28,6 +28,7 @@ class Controller:
             event, values = self.window.read()
             
             if event in (None, 'Close Window'): # if user closes window or clicks cancel
+                
                 break
             #If they press the search bar this then closes the window and searches
             elif event in('Search'):
@@ -41,7 +42,7 @@ class Controller:
                 
             #If they select the voice search option this allows them to then use their voice to search
             elif event in ('Voice Search'):
-                print("line 39")
+                
                 self.window.Hide()
                 
                 try:
@@ -54,7 +55,7 @@ class Controller:
             # the surrounding noise level 
                         r.adjust_for_ambient_noise(source2, duration=0.2)
                         #Popup window which allows the user to see that the computer is now listening
-                        pop=sg.popup("listening")
+                        pop=sg.popup("Please Speak After Pressing Okay")
                          
                         #listens for the user's input 
                         audio2 = r.listen(source2)
@@ -89,8 +90,13 @@ class Controller:
         
         #for line in information[1:]:
             #print(line)
+        #dataFrame = pd.read_csv("C:\Users\amit_\Desktop\SalesData.csv", header=None)
+        
+        if not event in (None, 'Close Window'):
+            sg.popup(information.read())
+        
 
-        sg.popup(information.read())
+        
         
 
         
